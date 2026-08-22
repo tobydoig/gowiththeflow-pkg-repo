@@ -7,26 +7,21 @@ repository (`Firmware > Plugins`).
 
 ## Using this repo
 
-Add a custom pkg repo config on the OPNsense box (e.g.
-`/usr/local/etc/pkg/repos/gowiththeflow.conf`):
+On the OPNsense box, as root:
 
 ```
-gowiththeflow: {
-  url: "https://tobyandzuzka.com/gowiththeflow-pkg-repo",
-  enabled: true,
-  signature_type: "none"
-}
+curl -o /usr/local/etc/pkg/repos/gowiththeflow.conf https://tobyandzuzka.com/gowiththeflow-pkg-repo/gowiththeflow.conf
 ```
 
-Not a typo: this GitHub Pages site 301-redirects `tobydoig.github.io/...` to
-`tobyandzuzka.com/...` since that domain is already the custom domain on the
+Then either `pkg update && pkg install os-gowiththeflow`, or go to
+Firmware > Plugins in the GUI, "Check for updates", and install from
+there (plugin installs are gated on core being up to date regardless of
+repo).
+
+(The URL isn't a typo for `tobydoig.github.io` -- this GitHub Pages site
+301-redirects there since that domain is already the custom domain on the
 `tobydoig.github.io` user-pages site, which becomes canonical for all
-project-page URLs under the account too. Use the direct URL to skip the
-redirect hop.
-
-Then `pkg update && pkg install os-gowiththeflow`, or find it under
-Firmware > Plugins once core is up to date (plugin installs are gated on
-that regardless of repo).
+project-page URLs under the account too.)
 
 `signature_type: "none"` is a stopgap for a single-maintainer repo during
 early testing — revisit before relying on this for anything that matters.
