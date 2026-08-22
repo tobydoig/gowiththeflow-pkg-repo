@@ -12,11 +12,17 @@ Add a custom pkg repo config on the OPNsense box (e.g.
 
 ```
 gowiththeflow: {
-  url: "https://tobydoig.github.io/gowiththeflow-pkg-repo",
+  url: "https://tobyandzuzka.com/gowiththeflow-pkg-repo",
   enabled: true,
   signature_type: "none"
 }
 ```
+
+Not a typo: this GitHub Pages site 301-redirects `tobydoig.github.io/...` to
+`tobyandzuzka.com/...` since that domain is already the custom domain on the
+`tobydoig.github.io` user-pages site, which becomes canonical for all
+project-page URLs under the account too. Use the direct URL to skip the
+redirect hop.
 
 Then `pkg update && pkg install os-gowiththeflow`, or find it under
 Firmware > Plugins once core is up to date (plugin installs are gated on
