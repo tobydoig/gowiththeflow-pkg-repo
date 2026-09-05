@@ -1,9 +1,9 @@
 # Go With The Flow — package repository
 
 This repo hosts the built FreeBSD/OPNsense package(s) and pkg repository
-catalog for Go With The Flow, an OPNsense plugin for per-host connection
-and bandwidth tracking with hostname resolution. The plugin's source is
-currently private, so here's what it actually does:
+catalog for [opnsense-gowiththeflow](https://github.com/tobydoig/opnsense-gowiththeflow),
+an OPNsense plugin for scheduled host and domain blocking, per-host
+connection and bandwidth tracking with hostname resolution.
 
 ## Features
 
@@ -79,6 +79,3 @@ packagesite.pkg / data.pkg       the catalog itself
 
 Regenerated with `pkg repo .` (see `net/gowiththeflow/pkg/build-pkg.sh`
 in the source repo) after each new build.
-
-Source and issue tracking live in the private
-[opnsense-gowiththeflow](https://github.com/tobydoig/opnsense-gowiththeflow) repo.
